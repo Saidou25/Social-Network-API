@@ -8,18 +8,23 @@ const userSchema = new Schema(
             Required: true,
             Trimmed: true,
         },
-        email: {
-            type: String,
-            Required: true,
-            Unique: true,
-            $match
-        },
-        thoughts: {
+        // email: {
+        //     type: String,
+        //     Required: true,
+        //     match: /.+\@.+\..+/,
+        //     Unique: true,
+            
+        // },
+        // thoughts: {
+        //     type: [Schema.Type.ObjectId],
+        //     ref: 'Thought'
+            
+        // },
+        // friends: {
+        //     type: [Schema.Type.ObjectId],
+        //     ref: 'User',
 
-        },
-        fdriends: {
-
-        },
+        // },
         
     },
     {
