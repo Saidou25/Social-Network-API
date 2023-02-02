@@ -1,23 +1,45 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
-const thoughtSchema = new Schema(
+const reactionSchema = new Schema(
     {
-        thoughText: {
+        reactionId: {
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(),
+        },
+        reactionBody: {
             type: String,
             required: true,
-            // must be between 1 and 280 charactes,
-        },
-        crearedAt: {
-            type: Date,
-            default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
+            maxlength: 280,
         },
         username: {
             type: String,
             required: true,
         },
-        // reacrions: {
-        //     Array of nested documents created with the reactionSchema
-        // }
+        createdAt: {
+            type: Date,
+            default: Date.now,
+
+        },
+    }
+)
+const thoughtSchema = new Schema(
+    {
+        thoughtText: {
+            type: String,
+            required: true,
+            // must be between 1 and 280 charactes,
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now,
+
+        },
+        username: {
+            type: String,
+        },
+        reactions: [reactionSchema],
+
+
     },
     {
         toJSON: {

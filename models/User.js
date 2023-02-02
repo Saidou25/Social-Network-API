@@ -11,27 +11,31 @@ const userSchema = new Schema(
         email: {
             type: String,
             Required: true,
-            // match: /.+\@.+\..+/,
+            match: /.+\@.+\..+/,
             Unique: true,          
         },
-        // thoughts: {
-        //     type: [Schema.Type.ObjectId],
-        //     ref: 'Thought'
+        thoughts: {
+            type: [Schema.Types.ObjectId],
+            ref: 'Thought'
             
-        // },
-        // friends: {
-        //     type: [Schema.Type.ObjectId],
-        //     ref: 'User',
+        },
+        friends: {
+            type: [Schema.Types.ObjectId],
+            ref: 'User',
 
-        // },
+        },
         
     },
-    // {
-    //     toJSON: {
-    //       getters: true,
-    //     },
-    //   }
+    {
+        toJSON: {
+          getters: true,
+        },
+      }
 );
+
+userSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
+});
 
 const User = model('user', userSchema);
 
