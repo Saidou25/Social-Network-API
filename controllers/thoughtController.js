@@ -3,8 +3,6 @@ const thoughts = require('../utils/data');
 const Thought = require('../models/User');
 const Reaction = require('../models/User');
 
-const ObjectId = require('mongodb').ObjectId;
-
 module.exports = {
     getThoughts(req, res) {
         Thought.find()
