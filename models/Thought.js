@@ -8,7 +8,7 @@ const reactionSchema = new Schema(
         },
         reactionBody: {
             type: String,
-            required: true,
+            required: false,// has to be set to true
             maxlength: 280,
         },
         username: {
@@ -27,7 +27,7 @@ const thoughtSchema = new Schema(
         thoughtText: {
             type: String,
             required: true,
-            // must be between 1 and 280 charactes,
+            maxlength: 280,
         },
         createdAt: {
             type: Date,
@@ -39,16 +39,15 @@ const thoughtSchema = new Schema(
         },
         reactions: [reactionSchema],
 
-
     },
     {
         toJSON: {
             virtuals: true,
         },
-
     }
 );
 
 const Thought = model('thought', thoughtSchema);
+const Reaction = model('reaction', reactionSchema);
 
-module.exports = Thought;
+module.exports = { Thought, Reaction };
