@@ -8,7 +8,7 @@ const reactionSchema = new Schema(
         },
         reactionBody: {
             type: String,
-            required: false,// has to be set to true
+            required: true,
             maxlength: 280,
         },
         username: {
@@ -48,6 +48,6 @@ const thoughtSchema = new Schema(
 );
 
 const Thought = model('thought', thoughtSchema);
-const Reaction = model('reaction', reactionSchema);
 
-module.exports = { Thought, Reaction };
+
+module.exports = { Thought };

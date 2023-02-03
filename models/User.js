@@ -12,28 +12,30 @@ const userSchema = new Schema(
             type: String,
             Required: true,
             match: /.+\@.+\..+/,
-            Unique: true,          
+            Unique: true,
         },
         thoughts: {
             type: [Schema.Types.ObjectId],
             ref: 'Thought'
-            
+
         },
         friends: {
             type: [Schema.Types.ObjectId],
             ref: 'User',
 
         },
-        
+
     },
     {
         toJSON: {
-          getters: true,
+            virtuals: true,
+            getters: true,
         },
-      }
+        
+    }
 );
 
-userSchema.virtual('friendCount').get(function() {
+userSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 });
 

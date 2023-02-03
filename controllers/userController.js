@@ -1,7 +1,7 @@
 
 const users = require('../utils/data');
 const User = require('../models/User');
-const ObjectId = require('mongodb').ObjectId;
+
 
 module.exports = {
     getUsers(req, res) {
