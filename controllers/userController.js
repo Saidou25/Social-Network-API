@@ -1,20 +1,19 @@
-const userData = require('../utils/data');
-const {User} = require('../models/User');
+// const userData = require('../utils/data');
+const users = require('../utils/data');
+const User = require('../models/User');
 
 module.exports = {
     getUsers(req, res) {
         User.find()
             .then((users) => res.json(users))
-         
             .catch((err) => {
                 console.log(err);
                 return res.status(500).json(err);
             });
-            console.log(users);
     },
 
     getSingleUser(req, res) {
-        User.findOne({ id: req.params.userId })
+        User.findOne({ _id: req.params.userId })
             .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
