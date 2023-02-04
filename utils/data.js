@@ -1,13 +1,15 @@
 const userData = [
-    { username: 'Courtney Farish', email: 'courtney@fun.com' },
+    {
+        username: 'Courtney Farish', email: 'courtney@fun.com'
+    },
     { username: 'Gillian Parker', email: 'gillian@fun.com' },
-    { username: 'Clark Consectetur', email: 'clark@fun.com' },
-    { username: 'Grace Libero', email: 'grace@fun.com' },
-    { username: 'Kelsey Gendrerit', email: 'kelse @fun.com' },
-    { username: 'Tamar Blandit', email: 'tamar@fun.com' },
-    { username: 'Alex Gravida', email: 'alex@fun.com' },
-    { username: 'Mark Imperdiet', email: 'mark@fun.com' },
-    { username: 'Tamar Nullam', email: 'tamar@fun.com' },
+    // { username: 'Clark Consectetur', email: 'clark@fun.com' },
+    // { username: 'Grace Libero', email: 'grace@fun.com' },
+    // { username: 'Kelsey Gendrerit', email: 'kelse @fun.com' },
+    // { username: 'Tamar Blandit', email: 'tamar@fun.com' },
+    // { username: 'Alex Gravida', email: 'alex@fun.com' },
+    // { username: 'Mark Imperdiet', email: 'mark@fun.com' },
+    // { username: 'Tamar Nullam', email: 'tamar@fun.com' },
 ];
 
 const thoughtData = [
@@ -21,6 +23,6 @@ const thoughtData = [
 ];
 
 module.exports = { userData, thoughtData };
-  
+
 
 
