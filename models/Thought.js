@@ -5,7 +5,7 @@ const reactionSchema = new Schema(
     {
         reactionId: {
             type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId(),
+            // default: () => new Types.ObjectId(),
         },
         reactionBody: {
             type: String,
@@ -22,7 +22,15 @@ const reactionSchema = new Schema(
             get: (date) => formatDate(date),
 
         },
+
+    },
+    {
+        toJSON: {
+            getters: true,
+        }
     }
+
+
 )
 const thoughtSchema = new Schema(
     {
@@ -39,6 +47,7 @@ const thoughtSchema = new Schema(
         },
         username: {
             type: String,
+            ref: 'user'
         },
         reactions: [reactionSchema],
 
