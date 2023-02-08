@@ -26,7 +26,7 @@ module.exports = {
     },
     createUser(req, res) {
         User.create(req.body)
-            .then((dbUserData) => res.json(dbUserData))
+            .then((dbUserData) => res.json('User created.'))
             .catch((err) => res.status(500).json(err));
     },
     deleteUser(req, res) {
@@ -35,7 +35,7 @@ module.exports = {
             .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json(user)
+                    : res.json('User deleted.')
             )
             .catch((err) => res.status(500).json(err));
     },
@@ -49,7 +49,7 @@ module.exports = {
             .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json(user)
+                    : res.json('User updated.')
             )
             .catch((err) => res.status(500).json(err));
     },
@@ -63,7 +63,7 @@ module.exports = {
             .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json(user)
+                    : res.json('Friend added.')
             )
             .catch((err) => res.status(500).json(err));
     },
@@ -76,7 +76,7 @@ module.exports = {
             .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json(user)
+                    : res.json('Friend deleted.')
             )
             .catch((err) => res.status(500).json(err));
     },

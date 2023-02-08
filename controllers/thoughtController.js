@@ -33,7 +33,7 @@ module.exports = {
 
                 )
             })
-            .then((thought) => res.json(thought))
+            .then((thought) => res.json('New thoughr created.'))
             .catch((err) => res.status(500).json(err));
     },
     deleteThought(req, res) {
@@ -41,7 +41,7 @@ module.exports = {
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json('thought deleted')
+                    : res.json('Thought deleted.')
             )
             .catch((err) => res.status(500).json(err));
     },
@@ -55,7 +55,7 @@ module.exports = {
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json(thought)
+                    : res.json('Thought updated.')
             )
             .catch((err) => res.status(500).json(err));
     },
@@ -68,7 +68,7 @@ module.exports = {
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json(thought)
+                    : res.json('Reaction created.')
             )
             .catch((err) => res.status(500).json(err));
     },
@@ -81,7 +81,7 @@ module.exports = {
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json(thought)
+                    : res.json('Reaction deleted.')
             )
             .catch((err) => res.status(500).json(err));
     },
